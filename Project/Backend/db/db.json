@@ -1,0 +1,172 @@
+{
+    "0": {
+        "file": {
+            "fileName": "nft-dog-1.png",
+            "mimetype": "image/png",
+            "storageName": "df2c4c681b207d29e841a22f68017d74",
+            "size": 1591685
+        },
+        "metadata": {
+            "name": "Charly",
+            "description": "Puppy World NFT",
+            "author": "Daiana",
+            "timestamp": 0,
+            "type": "Cute",
+            "class": "Legendary",
+            "score": 50
+        }
+    },
+    "1": {
+        "file": {
+            "fileName": "nft-dog-2.png",
+            "mimetype": "image/png",
+            "storageName": "68eba20b45f8292e1361b5e1ed883845",
+            "size": 1208368
+        },
+        "metadata": {
+            "name": "Coco",
+            "description": "Puppy World NFT",
+            "author": "Daiana",
+            "timestamp": 0,
+            "type": "Adorable",
+            "class": "Common",
+            "score": 20
+        }
+    },
+    "2": {
+        "file": {
+            "fileName": "nft-dog-3.png",
+            "mimetype": "image/png",
+            "storageName": "40cdd4045d49e2102851b5ad3bdf75ea",
+            "size": 1676963
+        },
+        "metadata": {
+            "name": "Bella",
+            "description": "Puppy World NFT",
+            "author": "Daiana",
+            "timestamp": 0,
+            "type": "Pretty",
+            "class": "Common",
+            "score": 20
+        }
+    },
+    "3": {
+        "file": {
+            "fileName": "nft-dog-4.png",
+            "mimetype": "image/png",
+            "storageName": "236a7b2e89c51d4fe3a13475591daf9b",
+            "size": 1087609
+        },
+        "metadata": {
+            "name": "Penny",
+            "description": "Puppy World NFT",
+            "author": "Daiana",
+            "timestamp": 0,
+            "type": "Lovable",
+            "class": "Legendary",
+            "score": 1000
+        }
+    },
+    "4": {
+        "file": {
+            "fileName": "nft-dog-5.png",
+            "mimetype": "image/png",
+            "storageName": "f7aa218110bb17abd91fb54b55b6c614",
+            "size": 1318207
+        },
+        "metadata": {
+            "name": "Duke",
+            "description": "Puppy World NFT",
+            "author": "Daiana",
+            "timestamp": 0,
+            "type": "Charming",
+            "class": "Rare",
+            "score": 75
+        }
+    },
+    "5": {
+        "file": {
+            "fileName": "nft-dog-6.png",
+            "mimetype": "image/png",
+            "storageName": "6516368d7d984af41bf019bf323d1e7a",
+            "size": 2595683
+        },
+        "metadata": {
+            "name": "Leo",
+            "description": "Puppy World NFT",
+            "author": "Daiana",
+            "timestamp": 0,
+            "type": "Beautiful",
+            "class": "Legendary",
+            "score": 1000
+        }
+    },
+    "6": {
+        "file": {
+            "fileName": "nft-dog-7.png",
+            "mimetype": "image/png",
+            "storageName": "16ccd099638c52f745973579750f3682",
+            "size": 1147815
+        },
+        "metadata": {
+            "name": "Max",
+            "description": "Puppy World NFT",
+            "author": "Daiana",
+            "timestamp": 0,
+            "type": "Delightful",
+            "class": "Common",
+            "score": 1
+        }
+    },
+    "7": {
+        "file": {
+            "fileName": "nft-dog-8.png",
+            "mimetype": "image/png",
+            "storageName": "31aa945993aed248d63902da51d51214",
+            "size": 2263078
+        },
+        "metadata": {
+            "name": "Sadie",
+            "description": "Puppy World NFT",
+            "author": "Daiana",
+            "timestamp": 0,
+            "type": "Cute",
+            "class": "Rare",
+            "score": 70
+        }
+    },
+    "8": {
+        "file": {
+            "fileName": "nft-dog-9.png",
+            "mimetype": "image/png",
+            "storageName": "69ccadf987e3f8a304602f1fb5f6f7b4",
+            "size": 965748
+        },
+        "metadata": {
+            "name": "Pancho",
+            "description": "Puppy World NFT",
+            "author": "Daiana",
+            "timestamp": 0,
+            "type": "Charming",
+            "class": "Legendary",
+            "score": 1000
+        }
+    },
+    "9": {
+        "file": {
+            "fileName": "nft-dog-10.png",
+            "mimetype": "image/png",
+            "storageName": "3707a58bbca29de43d2df1554f60c69d",
+            "size": 1056069
+        },
+        "metadata": {
+            "name": "ChoCho",
+            "description": "Puppy World NFT",
+            "author": "Daiana",
+            "timestamp": 0,
+            "type": "Cute",
+            "class": "Common",
+            "score": 2
+        }
+    }
+}
