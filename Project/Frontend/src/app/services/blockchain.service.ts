@@ -3,6 +3,17 @@ import { environment } from 'src/environments/environment';
 import { ethers, EventFilter } from 'ethers';
 import TokenContract from 'src/assets/contracts/Token.json';
 
+export interface IMetadata {
+  name: string;
+  description: string;
+  author: string;
+  timestamp: number;
+  type: string;
+  class: string;
+  score: number;
+  url: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -18,6 +29,13 @@ export class BlockchainService {
       environment.tokenContractAddress,
       TokenContract.abi
     ).connect(this.userWallet);
+  }
+
+  async tokenMetadata(tokenId: string): Promise<IMetadata> {
+    console.log('metadata')
+    const metadata = await this.tokenContractInstance['tokenURI'](tokenId);
+    console.log(JSON.stringify(metadata))
+    return metadata;
   }
 
   getProvider() {
