@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import "dotenv/config";
-import * as tokenJson from "../artifacts/contracts/PuppyWorld.sol"
+import * as tokenJson from "../artifacts/contracts/PuppyWorld.sol/PuppyWorld.json"
 import tokenURI from "./tokenURI.json"
 
 // This key is already public on Herong's Tutorial Examples - v1.03, by Dr. Herong Yang
@@ -40,7 +40,7 @@ async function main() {
     throw new Error("Not enough ether");
   }
 
-  console.log("Deploying NFT Contract");
+  console.log("Deploying NFTs");
   const tokenFactory = new ethers.ContractFactory(
     tokenJson.abi,
     tokenJson.bytecode,
@@ -56,15 +56,17 @@ async function main() {
   const tokenURIStringify = JSON.stringify(tokenURI);
   const parsedTokenURI = JSON.parse(tokenURIStringify);
 
-  for (let i = 1; i < 11; i++) {
+  // for (let i = 1; i < 11; i++) {
+    let i = 7843;
     let currentTokenId = i;
     console.log(`Minting token id: ${currentTokenId}`);
 
-    let currentTokenURI = parsedTokenURI[`${i}`];
+    let currentTokenURI = JSON.stringify(parsedTokenURI[`${currentTokenId}`]);
     console.log(`Current token metadata: ${currentTokenURI}`)
 
-    let safeMintTx = await nftContract.safeMint(wallet.address, i, currentTokenURI, )
-  }
+    let safeMintTx = await nftContract.safeMint(wallet.address, currentTokenId, currentTokenURI);
+    await safeMintTx.wait();
+  // }
 
   // const safeMintTx = await nftContract.safeMint(wallet.address, 100);
   // await mintTx.wait();
