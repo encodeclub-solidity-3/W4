@@ -157,6 +157,30 @@ export class AppController {
     }
   }
 
+  @Get('get-metadata-by-id/:id')
+  @ApiOperation({
+    summary: 'Get the metadata given the id',
+    description: 'GET method in the API to get the metadata by id',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Success',
+  })
+  @ApiResponse({
+    status: 503,
+    description: 'Could Not Retrieve Metadata',
+    type: HttpException,
+  })
+  async getMetadata(@Param('id') id: string) {
+    try {
+      const metadata = await this.appService.getMetadata(id);
+      return metadata;
+    } catch (error) {
+      console.error(error);
+      throw new HttpException(error.message, 503);
+    }
+  }
+
   @Post('file')
   @ApiOperation({
     summary: 'Register file',

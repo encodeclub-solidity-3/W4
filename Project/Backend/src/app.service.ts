@@ -97,4 +97,11 @@ export class AppService {
     const fileStream = uint8ArrayConcat(content);
     return new StreamableFile(fileStream);
   }
+
+  async getMetadata(fileId: string) {
+    const fileData: FileData = this.get(fileId);
+    if (!fileData.ipfs || !fileData.ipfs.path || fileData.ipfs.path.length == 0)
+      throw new Error('File not found');
+    return fileData.metadata;
+  }
 }
