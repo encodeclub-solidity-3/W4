@@ -28,12 +28,12 @@ import { UploadIpfsDto } from './dtos/upload-ipfs.dto';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('Get Hello')
+  @Get('Get-Hello')
   getHello(): string {
     return this.appService.getHello();
   }
 
-  @Get('Database Contents')
+  @Get('Database-Content')
   @ApiOperation({
     summary: 'Database contents',
     description: 'Gets the Database contents of this server',
