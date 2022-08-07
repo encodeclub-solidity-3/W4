@@ -28,4 +28,9 @@ export class ApiService {
       requestDto
     );
   }
+
+  getMetadata(tokenURI: string) {
+    return this.http.get(tokenURI);
+  }
+  
 }

@@ -90,6 +90,7 @@ export class AppController {
   })
   async getData(@Param('id') id: string) {
     try {
+      console.log(id);
       const result = this.appService.get(id);
       return result;
     } catch (error) {
