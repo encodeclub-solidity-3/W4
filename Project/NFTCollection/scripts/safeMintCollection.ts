@@ -57,19 +57,23 @@ async function main() {
   const parsedTokenURI = JSON.parse(tokenURIStringify);
 
   // for (let i = 1; i < 11; i++) {
-    let i = 7843;
-    let currentTokenId = i;
-    console.log(`Minting token id: ${currentTokenId}`);
+    // let i = 7843;
+    // let currentTokenId = i;
+    // console.log(`Minting token id: ${currentTokenId}`);
 
-    let currentTokenURI = JSON.stringify(parsedTokenURI[`${currentTokenId}`]);
-    console.log(`Current token metadata: ${currentTokenURI}`)
+    // let currentTokenURI = JSON.stringify(parsedTokenURI[`${currentTokenId}`]);
+    // console.log(`Current token metadata: ${currentTokenURI}`)
 
-    let safeMintTx = await nftContract.safeMint(wallet.address, currentTokenId, currentTokenURI);
-    await safeMintTx.wait();
+    // let safeMintTx = await nftContract.safeMint(wallet.address, currentTokenId, currentTokenURI);
+    // await safeMintTx.wait();
   // }
 
   // const safeMintTx = await nftContract.safeMint(wallet.address, 100);
   // await mintTx.wait();
+
+  const url = new URL("http://localhost:3000");
+  
+
 }
 
 main().catch((error) => {
