@@ -10,18 +10,18 @@ import { IMetadata } from '../../services/blockchain.service';
 })
 export class HomeComponent implements OnInit {
   INITIAL_CONTENTS = [
-    { key: '1', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, fileId: '' },
-    { key: '2', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, fileId: '' },
-    { key: '3', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, fileId: '' },
-    { key: '4', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, fileId: '' },
-    { key: '5', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, fileId: '' },
-    { key: '6', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, fileId: '' },
-    { key: '7', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, fileId: '' },
-    { key: '8', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, fileId: '' },
-    { key: '9', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, fileId: '' },
-    { key: '10', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, fileId: '' },
+    { key: '1', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, ipfsPath: '' },
+    { key: '2', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, ipfsPath: '' },
+    { key: '3', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, ipfsPath: '' },
+    { key: '4', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, ipfsPath: '' },
+    { key: '5', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, ipfsPath: '' },
+    { key: '6', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, ipfsPath: '' },
+    { key: '7', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, ipfsPath: '' },
+    { key: '8', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, ipfsPath: '' },
+    { key: '9', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, ipfsPath: '' },
+    { key: '10', puppyName: '', class: 'Loading...', tokenURI: '', type: 'Loading...', metadata: {}, ipfsPath: '' },
   ];
-  pageContents: { key: string; puppyName: string; class: string, type: string, tokenURI: string, metadata: IMetadata | {}, fileId: string }[] = [];
+  pageContents: { key: string; puppyName: string; class: string, type: string, tokenURI: string, metadata: IMetadata | {}, ipfsPath: string }[] = [];
 
   constructor(
     private blockchainService: BlockchainService,
@@ -51,8 +51,7 @@ export class HomeComponent implements OnInit {
           if (itemIndex >= 0) this.pageContents[itemIndex].puppyName = (res as IMetadata).metadata.name;
           if (itemIndex >= 0) this.pageContents[itemIndex].class = (res as IMetadata).metadata.class;
           if (itemIndex >= 0) this.pageContents[itemIndex].type = (res as IMetadata).metadata.type;
-          if (itemIndex >= 0) this.pageContents[itemIndex].fileId = fileId;
-
+          if (itemIndex >= 0) this.pageContents[itemIndex].ipfsPath = fileId;
         });
       });
     })

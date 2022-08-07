@@ -13,7 +13,8 @@ export interface IMetadata {
   ipfs: {
     code: { code: number };
     hash: Record<string, number>;
-    version: number
+    version: number;
+    path: string;
   };
   metadata: {
     author: string;
