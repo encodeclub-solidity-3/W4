@@ -23,6 +23,7 @@ import {
   import { FileDataDto } from './dtos/file-data.dto';
   import { SetMetadataDto } from './dtos/set-metadata.dto';
   import { UploadIpfsDto } from './dtos/upload-ipfs.dto';
+  import { Multer } from "multer";
   
   @ApiTags('file')
   @Controller()
@@ -150,24 +151,24 @@ import {
       return updatedObj;
     }
   
-    @Post('ipfs-save')
-    @ApiOperation({
-      summary: 'Register file metadata',
-      description: 'Registers a metadata for a file',
-    })
-    @ApiResponse({
-      status: 200,
-      description: 'Metadata registered',
-    })
-    @ApiResponse({
-      status: 503,
-      description: 'Server Error',
-      type: HttpException,
-    })
-    sendFileIpfs(@Body() body: UploadIpfsDto) {
-      const updatedObj = this.appService.saveToIpfs(body.id);
-      return updatedObj;
-    }
+    // @Post('ipfs-save')
+    // @ApiOperation({
+    //   summary: 'Register file metadata',
+    //   description: 'Registers a metadata for a file',
+    // })
+    // @ApiResponse({
+    //   status: 200,
+    //   description: 'Metadata registered',
+    // })
+    // @ApiResponse({
+    //   status: 503,
+    //   description: 'Server Error',
+    //   type: HttpException,
+    // })
+    // sendFileIpfs(@Body() body: UploadIpfsDto) {
+    //   const updatedObj = this.appService.saveToIpfs(body.id);
+    //   return updatedObj;
+    // }
   
     // TODO
   }

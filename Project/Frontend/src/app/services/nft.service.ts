@@ -68,12 +68,12 @@ export class AppService {
     return this.get(fileId);
   }
 
-  async saveToIpfs(fileId: string) {
-    const fileData: FileData = this.get(fileId);
-    const fileLocation = `../upload/${fileData.file.storageName}`;
-    const fileBytes = fs.readFileSync(fileLocation);
-    const ipfsData = await this.ipfsClient.add(fileBytes);
-    this.db.push(`/${fileId}/ipfs`, ipfsData);
-    return this.get(fileId);
-  }
+  // async saveToIpfs(fileId: string) {
+  //   const fileData: FileData = this.get(fileId);
+  //   const fileLocation = `../upload/${fileData.file.storageName}`;
+  //   const fileBytes = fs.readFileSync(fileLocation);
+  //   const ipfsData = await this.ipfsClient.add(fileBytes);
+  //   this.db.push(`/${fileId}/ipfs`, ipfsData);
+  //   return this.get(fileId);
+  // }
 }
