@@ -229,7 +229,7 @@ export class AppController {
     type: HttpException,
   })
   sendFileIpfs(@Body() body: UploadIpfsDto) {
-    const updatedObj = this.appService.saveToIpfs(body.id + ' ');
+    const updatedObj = this.appService.saveToIpfs(body.id + '');
     return updatedObj;
   }
 }

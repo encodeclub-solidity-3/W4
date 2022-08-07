@@ -78,8 +78,6 @@ export class AppService {
 
   async saveToIpfs(fileId: string) {
     const fileData: FileData = this.get(fileId);
-    if (!fileData.ipfs || !fileData.ipfs.path || fileData.ipfs.path.length == 0)
-      throw new Error('File not found');
     const fileLocation = `./upload/${fileData.file.storageName}`;
     const fileBytes = fs.readFileSync(fileLocation);
     const ipfsData = await this.ipfsClient.add(fileBytes);
