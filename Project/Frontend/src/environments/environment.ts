@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  network: 'ropsten',
-  tokenContractAddress: '0x03d25a324b3c56f3520ce74df120D6b984522A99',
+  network: 'goerli',
+  tokenContractAddress: '0x30f9e8a9b6873a2bd68c6982f1334eb424ada80d',
   apiAddress: 'http://127.0.0.1:3000/',
   production: false
 };
