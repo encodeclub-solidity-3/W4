@@ -21,6 +21,26 @@ Team Members:
 1. A print for each one of the interface (frontend) pages:
 ![screencapture-localhost-4200-2022-08-07-22_50_50](https://user-images.githubusercontent.com/96442866/183348418-b11e1533-a73e-4b17-80e6-ef7dee86750a.png)
 2. A print for each of the methods being called in the backend (swagger or postman):
+
+* GET Method for getting metadata for image given the ID
+  * Example: Get metadata for image #5
+  * Request URL: `http://localhost:3000/get-metadata-by-id/5`
+  * Curl: `curl -X 'GET' \
+  'http://localhost:3000/get-metadata-by-id/5' \
+  -H 'accept: */*'`
+  * Response: 
+```
+{
+  "name": "Leo",
+  "description": "Puppy World NFT",
+  "author": "Daiana",
+  "timestamp": 0,
+  "type": "Beautiful",
+  "class": "Legendary",
+  "score": 1000
+}
+```
+
 3. List of CID for the images hosted at IPFS:
 * Image 1:
   - CID: QmdAmBvCXGz6xoQpwtszaDRWU41FecFmqfhLokw3c4jcXS
