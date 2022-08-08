@@ -1,13 +1,13 @@
 ## Instructions
-1. Navigate to the `Backend` folder and execute `npm run start`
-2. Open a separate terminal
-3. Navigate to the `Frontend` folder and execute `yarn start`
+1. Navigate to `/Backend/` and execute `yarn run start`
+2. On a separate terminal, navigate to `/Frontend/` and execute `yarn start`
+3. Visit Puppy World at `localhost:4200`
 <br></br>
 
 # Puppy World NFT
 ![screencapture-localhost-4200-2022-08-07-22_50_50](https://user-images.githubusercontent.com/96442866/183348418-b11e1533-a73e-4b17-80e6-ef7dee86750a.png)
-The world's cutest puppies have made the Ethereum blockchain their new home. This collection contains 10 of the rarest puppy NFTs.
-
+The world's cutest puppies have made the Ethereum blockchain their new home. This collection contains 10 extremely brave, adventurous, and cute puppies.
+<br></br>
 # Encode Club Solidity Bootcamp
 ### Week 4 Project - July 2022 Cohort
 Team Members: 
@@ -26,13 +26,12 @@ Team Members:
 
 `NFT Contract Address`[0xe34e72d49fe8e5991dc97537c05dbacdffd3adfb](https://goerli.etherscan.io/address/0xe34e72d49fe8e5991dc97537c05dbacdffd3adfb)
 
-`Transaction Hash` [0x3a35b05463afe1bd96a823bdc1a42462e8485aada9dff45fa75318e40a843dfb](https://goerli.etherscan.io/tx/0x3a35b05463afe1bd96a823bdc1a42462e8485aada9dff45fa75318e40a843dfb)
+`Contract Deployment Transaction Hash` [0x3a35b05463afe1bd96a823bdc1a42462e8485aada9dff45fa75318e40a843dfb](https://goerli.etherscan.io/tx/0x3a35b05463afe1bd96a823bdc1a42462e8485aada9dff45fa75318e40a843dfb)
 
-`Minting Transactions`[](https://goerli.etherscan.io/token/0xe34e72d49fe8e5991dc97537c05dbacdffd3adfb)
+`Token Address (Minting Transactions Listed)` [0xe34e72d49fe8e5991dc97537c05dbacdffd3adfb](https://goerli.etherscan.io/token/0xe34e72d49fe8e5991dc97537c05dbacdffd3adfb)
+<br></br>
 
-
-### Puppy World NFT
-These puppies have made web 3 their new home! This collection contains 10 of the rarest puppy NFTs on the Ethereum blockchain. 
+## Project Requirements
 1. Build a web server and API for providing the features using the RESTful architecture
 2. Run a local node of IPFS
 3. Upload 10 images to this node
