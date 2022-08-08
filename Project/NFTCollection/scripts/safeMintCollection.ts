@@ -41,39 +41,22 @@ async function main() {
   }
 
   console.log("Deploying NFTs");
-  const tokenFactory = new ethers.ContractFactory(
+  const nftContract = new ethers.Contract(
+    "0xe34e72d49fe8e5991dc97537c05dbacdffd3adfb",
     tokenJson.abi,
-    tokenJson.bytecode,
     signer
   );
-  const nftContract = await tokenFactory.deploy();
-  console.log("Awaiting confirmations");
-  await nftContract.deployed();
-  console.log("Completed");
-  console.log(`Contract deployed at ${nftContract.address}`);
 
 
-  const tokenURIStringify = JSON.stringify(tokenURI);
-  const parsedTokenURI = JSON.parse(tokenURIStringify);
+  for (let i = 0; i < 10; i++) {
+    let tokenId = i + 1;
+    console.log(`Minting token id: ${tokenId}`);
+    let tokenURI = `http://localhost:3000/${i}`;
+    console.log(`Current token metadata: ${tokenURI}`)
 
-  // for (let i = 1; i < 11; i++) {
-    // let i = 7843;
-    // let currentTokenId = i;
-    // console.log(`Minting token id: ${currentTokenId}`);
-
-    // let currentTokenURI = JSON.stringify(parsedTokenURI[`${currentTokenId}`]);
-    // console.log(`Current token metadata: ${currentTokenURI}`)
-
-    // let safeMintTx = await nftContract.safeMint(wallet.address, currentTokenId, currentTokenURI);
-    // await safeMintTx.wait();
-  // }
-
-  // const safeMintTx = await nftContract.safeMint(wallet.address, 100);
-  // await mintTx.wait();
-
-  const url = new URL("http://localhost:3000");
-  
-
+    let safeMintTx = await nftContract.safeMint(wallet.address, tokenId, tokenURI);
+    await safeMintTx.wait();
+  }
 }
 
 main().catch((error) => {

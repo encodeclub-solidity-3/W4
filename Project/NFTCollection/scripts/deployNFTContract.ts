@@ -44,6 +44,9 @@ async function main() {
   await nftContract.deployed();
   console.log("Completed");
   console.log(`Contract deployed at ${nftContract.address}`);
+
+  // Puppy World deployed at contract:
+  // 0xe34e72d49fe8e5991dc97537c05dbacdffd3adfb
 }
 
 main().catch((error) => {

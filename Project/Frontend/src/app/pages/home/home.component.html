@@ -1,6 +1,27 @@
 <div class="px-4 py-5 my-5 text-center">
-  <h1 class="display-5 fw-bold">Puppy world NFT Gallery</h1>
+  <h1 class="display-5 fw-bold">Welcome to Puppy World</h1>
   <style>
+    html {
+      background-color: #d4f0f0;
+      font-family: Helvetica, sans-serif;
+    }
+
+    h1 {
+      margin-top: 32px;
+      color: #d33d6d;
+      margin-bottom: 64px;
+    }
+
+    .row {
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .px-4 {
+      padding-right: 6rem !important;
+      padding-left: 6rem !important;
+    }
+
     .text {
       font-size: 20px;
       padding-left: 20px;
@@ -9,6 +30,23 @@
     img:hover {
       animation: shake 0.5s;
       animation-iteration-count: infinite;
+    }
+
+    .my-5 {
+      margin: 0px !important;
+    }
+
+    img {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    .col {
+      width: 261.5px !important;
+    }
+
+    .list-group-item {
+      border-top: 1px solid rgba(0, 0, 0, 0.125);
     }
 
     @keyframes shake {
@@ -56,25 +94,156 @@
         transform: translate(1px, -2px) rotate(-1deg);
       }
     }
+
+    .px-4 {
+      background-color: #d4f0f0;
+    }
+
+    .list-group-item {
+      background-color: #d4f0f0;
+      border-radius: 6px;
+      border: 3px solid white;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+
+    .third-row {
+      justify-content: center;
+    }
+
+    .card-title {
+      text-align: center !important;
+      margin-bottom: 10px !important;
+      font-size: 24px;
+    }
+
+    .card-details{
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .card-details > *{
+      text-align:center !important;
+    }
+
   </style>
-  <div class="col-lg-6 mx-auto">
-    <div class="list-group-item" *ngFor="let item of pageContents">
+  <div class="row mx-auto">
+    <div
+      class="col list-group-item"
+      *ngFor="let item of pageContents | slice: 0:4"
+    >
       <div class="text">
-        <p class="mb-0 text-start">Name: {{item.puppyName}}</p>
-        <p class="mb-0 text-start">Class: {{item.class}}</p>
-        <p class="mb-0 text-start">Type: {{item.type}}</p>
-        <p class="mb-0 text-start">Description: {{item.description}}</p>
-        <p class="mb-0 text-start">Score: {{item.score}}</p>
+        <p class="mb-0 text-start card-title">{{ item.puppyName }}</p>
       </div>
       <div class="text">
-        <img src="https://ipfs.io/ipfs/{{item.ipfsPath}}" class="img-responsive" alt="Image">
+        <img
+          src="https://ipfs.io/ipfs/{{ item.ipfsPath }}"
+          class="img-responsive"
+          alt="Image"
+        />
       </div>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="purchaseToken()">Purchase PW
-          NFT</button>
+      <div class="text card-details">
+        <p class="mb-0 text-start">Class: {{ item.class }}</p>
+        <p class="mb-0 text-start">Type: {{ item.type }}</p>
+        <p class="mb-0 text-start">Score: {{ item.score }}</p>
       </div>
+      <!-- <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3"
+            (click)="purchaseToken()"
+          >
+            Purchase PW NFT
+          </button>
+        </div> -->
     </div>
-    <div class="col-lg-6 mx-auto mt-5">
-      <button type="button" class="btn btn-primary btn-lg" routerLink="dashboard">Connect wallet</button>
-    </div>
+    <!-- <div class="col-lg-6 mx-auto mt-5">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg"
+          routerLink="dashboard"
+        >
+          Connect wallet
+        </button>
+      </div> -->
   </div>
+  <div class="row mx-auto">
+    <div
+      class="col list-group-item"
+      *ngFor="let item of pageContents | slice: 4:8"
+    >
+      <div class="text">
+        <p class="mb-0 text-start card-title">{{ item.puppyName }}</p>
+      </div>
+      <div class="text">
+        <img
+          src="https://ipfs.io/ipfs/{{ item.ipfsPath }}"
+          class="img-responsive"
+          alt="Image"
+        />
+      </div>
+      <div class="text card-details">
+        <p class="mb-0 text-start">Class: {{ item.class }}</p>
+        <p class="mb-0 text-start">Type: {{ item.type }}</p>
+        <p class="mb-0 text-start">Score: {{ item.score }}</p>
+      </div>
+      <!-- <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3"
+            (click)="purchaseToken()"
+          >
+            Purchase PW NFT
+          </button>
+        </div> -->
+    </div>
+    <!-- <div class="col-lg-6 mx-auto mt-5">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg"
+          routerLink="dashboard"
+        >
+          Connect wallet
+        </button>
+      </div> -->
+  </div>
+  <div class="row mx-auto third-row">
+    <div
+      class="col-3 list-group-item"
+      *ngFor="let item of pageContents | slice: 8:10"
+    >
+      <div class="text">
+        <p class="mb-0 text-start card-title">{{ item.puppyName }}</p>
+      </div>
+      <div class="text">
+        <img
+          src="https://ipfs.io/ipfs/{{ item.ipfsPath }}"
+          class="img-responsive"
+          alt="Image"
+        />
+      </div>
+      <div class="text card-details">
+        <p class="mb-0 text-start">Class: {{ item.class }}</p>
+        <p class="mb-0 text-start">Type: {{ item.type }}</p>
+        <p class="mb-0 text-start">Score: {{ item.score }}</p>
+      </div>
+      <!-- <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3"
+            (click)="purchaseToken()"
+          >
+            Purchase PW NFT
+          </button>
+        </div> -->
+    </div>
+    <!-- <div class="col-lg-6 mx-auto mt-5">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg"
+          routerLink="dashboard"
+        >
+          Connect wallet
+        </button>
+      </div> -->
+  </div>
+</div>

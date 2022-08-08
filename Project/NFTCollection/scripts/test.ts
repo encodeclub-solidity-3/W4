@@ -16,11 +16,13 @@ const parsedTokenURI = JSON.parse(tokenURIStringify);
 // }
 
 import axios from "axios";
-const port = process.env.PORT || 3000;
-axios.get(`https://ipfs.io/ipfs/QmTnWg7raSZBCepCzmUUKA54Xx3UWw2cKY8pG4Bf9mj2nr`)
-  .then( (res) => {
-    let currentTokenData = res.data;
-    let imageData = currentTokenData.ipfs;
-    let currentTokenMetadata = currentTokenData.metadata;
-    console.log(res.data[0])
-  })
+
+for (let i = 1; i < 2; i++) {
+  console.log(`Minting Puppy World NFT - Token ID: ${i}`)
+  axios.get(`http://localhost:3000/`)
+    .then((res) => {
+      let tokenData = res.data;
+      console.log(tokenData)
+      // let currentTokenURI = JSON.stringify(currentTokenData);
+    })
+}
