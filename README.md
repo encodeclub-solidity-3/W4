@@ -6,7 +6,7 @@
 
 # Puppy World NFT
 ![screencapture-localhost-4200-2022-08-07-22_50_50](https://user-images.githubusercontent.com/96442866/183348418-b11e1533-a73e-4b17-80e6-ef7dee86750a.png)
-The world's cutest puppies have made the Ethereum blockchain their new home. This collection contains 10 extremely brave, adventurous, and cute puppies.
+These puppies have left their worlds to explore, and have made the Ethereum blockchain their new home. This collection contains 10 extremely brave, adventurous, and cute puppies.
 <br></br>
 # Encode Club Solidity Bootcamp
 ### Week 4 Project - July 2022 Cohort
