@@ -45,9 +45,7 @@ export class BlockchainService {
   }
 
   async tokenURI(tokenId: string): Promise<string> {
-    console.log('metadata')
     const tokenUri = await this.tokenContractInstance['tokenURI'](tokenId);
-    console.log(tokenUri);
     return tokenUri;
   }
 
