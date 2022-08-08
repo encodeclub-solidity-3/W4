@@ -1,35 +1,44 @@
-# Lesson 15 - Integration
-## Coupling frontend and APIs
-* On-chain and off-chain features
-* Keeping user Private Key private
-* Authentication methods
-* Using signatures as a form of authentication
-* Mapping interactions, resources and payloads
-* Handling errors
-### References
-https://en.wikipedia.org/wiki/Loose_coupling
-## Auth methods for the Web3.0
-* Consuming services from API
-* Authentication and authorization
-* Elliptic encryption
-* Signing messages
-* Message signature in body
-* Verifying signatures
-### References
-https://en.wikipedia.org/wiki/Authentication_protocol
+## Instructions
+1. Navigate to the `Backend` folder and execute `npm run start`
+2. Open a separate terminal
+3. Navigate to the `Frontend` folder and execute `yarn start`
+<br></br>
 
-https://dev.to/lparvinsmith/signatures-as-authentication-in-web3-3kod
-## File storage for the Web3.0
-* Files on the server
-* Scalable centralized solutions
-* Databases vs File servers
-* Decentralized file storage principles
-* Introducing IPFS
-* IPFS as a File Server
-### References
-https://ipfs.io/
-# Homework
-* Create Github Issues with your questions about this lesson
-* Finish the integration
-* Study about [IPFS](https://docs.ipfs.io/)
-* (Optional) Implement more features to integrate frontend and backend from previous classes
+# Puppy World NFT
+![screencapture-localhost-4200-2022-08-07-22_50_50](https://user-images.githubusercontent.com/96442866/183348418-b11e1533-a73e-4b17-80e6-ef7dee86750a.png)
+The world's cutest puppies have made the Ethereum blockchain their new home. This collection contains 10 of the rarest puppy NFTs.
+
+# Encode Club Solidity Bootcamp
+### Week 4 Project - July 2022 Cohort
+Team Members: 
+- Daiana Bilbao (hello_dayana#4030)
+- Kevin Le (water1925#7425)
+- Christina Polyukh (cpolyukh#5660)
+- Alice He (AliceNoWonderLand#9140)
+<br><br>
+
+## Project Deliverables
+1. A print for each one of the interface (frontend) pages:
+![screencapture-localhost-4200-2022-08-07-22_50_50](https://user-images.githubusercontent.com/96442866/183348418-b11e1533-a73e-4b17-80e6-ef7dee86750a.png)
+2. A print for each of the methods being called in the backend (swagger or postman):
+3. List of CID for the images hosted at IPFS:
+4. Relevant Transactions:
+
+`NFT Contract Address`[0xe34e72d49fe8e5991dc97537c05dbacdffd3adfb](https://goerli.etherscan.io/address/0xe34e72d49fe8e5991dc97537c05dbacdffd3adfb)
+
+`Transaction Hash` [0x3a35b05463afe1bd96a823bdc1a42462e8485aada9dff45fa75318e40a843dfb](https://goerli.etherscan.io/tx/0x3a35b05463afe1bd96a823bdc1a42462e8485aada9dff45fa75318e40a843dfb)
+
+`Minting Transactions`[](https://goerli.etherscan.io/token/0xe34e72d49fe8e5991dc97537c05dbacdffd3adfb)
+
+
+### Puppy World NFT
+These puppies have made web 3 their new home! This collection contains 10 of the rarest puppy NFTs on the Ethereum blockchain. 
+1. Build a web server and API for providing the features using the RESTful architecture
+2. Run a local node of IPFS
+3. Upload 10 images to this node
+4. Create a JSON and build metadata descriptions for 10 NFTs, each using one unique image
+5. Make a GET method in the API to get the metadata by id
+6. Deploy a NFT Collection and mint 10 NFTs, and assign the API endpoint to the token URI
+7. Integrate this NFT Collection contract and APIs in a frontend application to display NFTs metadata and images
+8. (Bonus) provide wallet functions in the frontend to buy, transfer, allow, transfer from and burn NFTs
+
