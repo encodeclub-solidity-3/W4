@@ -4,14 +4,27 @@ import { ethers, EventFilter } from 'ethers';
 import TokenContract from 'src/assets/contracts/Token.json';
 
 export interface IMetadata {
-  name: string;
-  description: string;
-  author: string;
-  timestamp: number;
-  type: string;
-  class: string;
-  score: number;
-  url: string;
+  file: {
+    fileName: string;
+    mimetype: string;
+    size: number;
+    storageName: string;
+  };
+  ipfs: {
+    code: { code: number };
+    hash: Record<string, number>;
+    version: number;
+    path: string;
+  };
+  metadata: {
+    author: string;
+    class: string;
+    description: string;
+    name: string;
+    score: number;
+    timestamp: number;
+    type: string;
+  }
 }
 
 @Injectable({
@@ -31,11 +44,9 @@ export class BlockchainService {
     ).connect(this.userWallet);
   }
 
-  async tokenMetadata(tokenId: string): Promise<IMetadata> {
-    console.log('metadata')
-    const metadata = await this.tokenContractInstance['tokenURI'](tokenId);
-    console.log(JSON.stringify(metadata))
-    return metadata;
+  async tokenURI(tokenId: string): Promise<string> {
+    const tokenUri = await this.tokenContractInstance['tokenURI'](tokenId);
+    return tokenUri;
   }
 
   getProvider() {

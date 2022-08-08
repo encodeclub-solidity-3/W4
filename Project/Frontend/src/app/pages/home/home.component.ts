@@ -10,35 +10,50 @@ import { IMetadata } from '../../services/blockchain.service';
 })
 export class HomeComponent implements OnInit {
   INITIAL_CONTENTS = [
-    { key: '7843', prop: 'User wallet address', url: 'Loading...', metadata: {} },
-    { key: '2', prop: 'Ether balance', url: 'Loading...', metadata: {} },
-    { key: '3', prop: 'Network name', url: 'Loading...', metadata: {} },
-    { key: '4', prop: 'Last block number', url: 'Loading...', metadata: {} },
-    { key: '5', prop: 'Token address', url: 'Loading...', metadata: {} },
-    { key: '6', prop: 'Token name', url: 'Loading...', metadata: {} },
-    { key: '7', prop: 'Token symbol', url: 'Loading...', metadata: {} },
-    { key: '8', prop: 'Total supply', url: 'Loading...', metadata: {} },
-    { key: '9', prop: 'User balance', url: 'Loading...', metadata: {} },
-    { key: '10', prop: 'User balance', url: 'Loading...', metadata: {} },
+    { key: '1', puppyName: '', class: 'Loading...', type: 'Loading...', description: 'Loading...', score: 0, ipfsPath: '' },
+    { key: '2', puppyName: '', class: 'Loading...', type: 'Loading...', description: 'Loading...', score: 0, ipfsPath: '' },
+    { key: '3', puppyName: '', class: 'Loading...', type: 'Loading...', description: 'Loading...', score: 0, ipfsPath: '' },
+    { key: '4', puppyName: '', class: 'Loading...', type: 'Loading...', description: 'Loading...', score: 0, ipfsPath: '' },
+    { key: '5', puppyName: '', class: 'Loading...', type: 'Loading...', description: 'Loading...', score: 0, ipfsPath: '' },
+    { key: '6', puppyName: '', class: 'Loading...', type: 'Loading...', description: 'Loading...', score: 0, ipfsPath: '' },
+    { key: '7', puppyName: '', class: 'Loading...', type: 'Loading...', description: 'Loading...', score: 0, ipfsPath: '' },
+    { key: '8', puppyName: '', class: 'Loading...', type: 'Loading...', description: 'Loading...', score: 0, ipfsPath: '' },
+    { key: '9', puppyName: '', class: 'Loading...', type: 'Loading...', description: 'Loading...', score: 0, ipfsPath: '' },
+    { key: '10', puppyName: '', class: 'Loading...', type: 'Loading...', description: 'Loading...', score: 0, ipfsPath: '' },
   ];
-  pageContents: { key: string; prop: string; url: string, metadata: {} }[] = [];
+  pageContents: { key: string; puppyName: string; class: string, type: string, description: string, score: number, ipfsPath: string }[] = [];
 
   constructor(
     private blockchainService: BlockchainService,
     private apiService: ApiService
   ) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.pageContents = this.INITIAL_CONTENTS;
-    this.updateValues()
+    this.update();
   }
 
-  private async updateValues() {
-    this.INITIAL_CONTENTS.forEach(async (token) => {
-      const metadata = await this.blockchainService.tokenMetadata(token.key);
-      token = {...token, metadata};
+  private update() {
+    this.INITIAL_CONTENTS.forEach((token) => {
+      this.blockchainService.tokenURI(token.key).then((tokenURI) => {
+        this.apiService.getMetadata(tokenURI).subscribe((res) => {
+          const itemIndex = this.pageContents.findIndex(
+            (obj) => obj.key === token.key
+          );
+
+          if (itemIndex >= 0) this.pageContents[itemIndex].puppyName = (res as IMetadata).metadata.name;
+          if (itemIndex >= 0) this.pageContents[itemIndex].class = (res as IMetadata).metadata.class;
+          if (itemIndex >= 0) this.pageContents[itemIndex].type = (res as IMetadata).metadata.type;
+          if (itemIndex >= 0) this.pageContents[itemIndex].ipfsPath = (res as IMetadata).ipfs.path;
+          if (itemIndex >= 0) this.pageContents[itemIndex].description = (res as IMetadata).metadata.description;
+          if (itemIndex >= 0) this.pageContents[itemIndex].score = (res as IMetadata).metadata.score;
+        });
+      });
     })
-    console.log(this.INITIAL_CONTENTS[0])
+  }
+
+  purchaseToken() {
+    //TODO: add purchase function
   }
 
 }

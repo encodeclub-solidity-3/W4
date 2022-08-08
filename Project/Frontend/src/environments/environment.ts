@@ -4,7 +4,7 @@
 
 export const environment = {
   network: 'goerli',
-  tokenContractAddress: '0x30f9e8a9b6873a2bd68c6982f1334eb424ada80d',
+  tokenContractAddress: '0xe34e72d49fe8e5991dc97537c05dbacdffd3adfb',
   apiAddress: 'http://127.0.0.1:3000/',
   production: false
 };
